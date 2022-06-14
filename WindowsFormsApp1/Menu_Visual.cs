@@ -23,9 +23,12 @@ namespace WindowsFormsApp1
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!(Tb_Txt.Text == null))
+            if (Tb_Txt.Text == "")
             {
-                Frm_SairSemSalvar S = new Frm_SairSemSalvar();
+                
+            }
+            else {
+                Frm_SairSemSalvar S = new Frm_SairSemSalvar("");
                 S.ShowDialog();
 
                 if (S.DialogResult == DialogResult.Yes)
@@ -82,12 +85,15 @@ namespace WindowsFormsApp1
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_SairSemSalvar S = new Frm_SairSemSalvar();
-            S.ShowDialog();
-            if (!(Tb_Txt.Text == null))
+            
+            if (Tb_Txt.Text == "")
             {
 
-
+            }
+            else
+            {
+                Frm_SairSemSalvar S = new Frm_SairSemSalvar(Tb_Txt.Text);
+                S.ShowDialog();
                 if (S.DialogResult == DialogResult.Yes)
                 {
                     this.Cursor = Cursors.WaitCursor;
@@ -104,10 +110,7 @@ namespace WindowsFormsApp1
                     
                 }
             }
-            else
-            {
-                 this.Close();
-            }
+
 
             OpenFileDialog txt = new OpenFileDialog();
             txt.InitialDirectory = "C:\\WindowsForms\\Curso\\CursoWindowsForms\\CursoWindowsForms\\Imagens";
@@ -119,6 +122,38 @@ namespace WindowsFormsApp1
                 using (var leitor = new StreamReader(txt.FileName))
                 {
                     Tb_Txt.Text = leitor.ReadToEnd();
+                }
+            }
+        }
+
+        private void salvarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Arquivo de Texto | .txt";
+            save.ShowDialog();
+
+            if (string.IsNullOrEmpty(save.FileName) == false)
+            {
+                using (StreamWriter writer = new StreamWriter(save.FileName, false, Encoding.UTF8))
+                {
+                    writer.Write(Tb_Txt.Text);
+                    writer.Flush();
+                }
+            }
+        }
+
+        private void salvarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Arquivo de Texto | .txt";
+            save.ShowDialog();
+
+            if (string.IsNullOrEmpty(save.FileName) == false)
+            {
+                using (StreamWriter writer = new StreamWriter(save.FileName, false, Encoding.UTF8))
+                {
+                    writer.Write(Tb_Txt.Text);
+                    writer.Flush();
                 }
             }
         }

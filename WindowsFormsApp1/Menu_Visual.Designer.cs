@@ -36,13 +36,13 @@ namespace WindowsFormsApp1
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaJanelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fonteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.corToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Opcoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +102,20 @@ namespace WindowsFormsApp1
             this.abrirToolStripMenuItem.Text = "Abrir...";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
+            // salvarToolStripMenuItem
+            // 
+            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarToolStripMenuItem.Text = "Salvar";
+            this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
+            // 
+            // salvarComoToolStripMenuItem
+            // 
+            this.salvarComoToolStripMenuItem.Name = "salvarComoToolStripMenuItem";
+            this.salvarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarComoToolStripMenuItem.Text = "Salvar Como...";
+            this.salvarComoToolStripMenuItem.Click += new System.EventHandler(this.salvarComoToolStripMenuItem_Click);
+            // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -142,27 +156,15 @@ namespace WindowsFormsApp1
             this.corToolStripMenuItem.Text = "Cor...";
             this.corToolStripMenuItem.Click += new System.EventHandler(this.corToolStripMenuItem_Click);
             // 
-            // salvarToolStripMenuItem
-            // 
-            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salvarToolStripMenuItem.Text = "Salvar";
-            // 
-            // salvarComoToolStripMenuItem
-            // 
-            this.salvarComoToolStripMenuItem.Name = "salvarComoToolStripMenuItem";
-            this.salvarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salvarComoToolStripMenuItem.Text = "Salvar Como...";
-            // 
             // Frm_Tela
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(810, 446);
             this.Controls.Add(this.Tb_Txt);
             this.Controls.Add(this.Mnu_Opcoes);
-            this.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Mnu_Opcoes;
